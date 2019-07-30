@@ -1,0 +1,18 @@
+{% extends "main_hello.html" %}
+{% block title %}Hello Template{% endblock title %}
+{% block content %}
+    Hello World!!!<p>Today is {{today}}</p>
+    <p>
+    We are on&nbsp;
+    {% if today.day == 1 %}
+    the first day of the month.
+    {% elif today.day == 30 %}
+    the last day of the month.
+    {% else %}
+    {{today.day}} day of the month.
+    {% endif %}
+    </p>
+    {% for day in days_of_week %}
+    <h3>{{day}}</h3>
+    {% endfor %}
+{% endblock content %}
